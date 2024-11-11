@@ -1,8 +1,8 @@
 import React from 'react';
 
 const EventDetails = () => (
-    <section className="py-8 bg-pink-50 text-center">
-        <h2 className="text-3xl font-semibold">Wedding Ceremony & Party</h2>
+    <section className="py-8 bg-white text-center">
+        <h2 className="text-3xl font-semibold text-pink-600">Wedding Ceremony & Party</h2>
         <div className="mt-6 flex justify-center space-x-8">
             <div>
                 <h3 className="font-bold">Wedding Ceremony</h3>

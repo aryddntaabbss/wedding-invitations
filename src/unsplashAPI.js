@@ -1,6 +1,7 @@
+// src/unsplashAPI.js
 import axios from 'axios';
 
-const UNSPLASH_ACCESS_KEY = 'YOUR_ACCESS_KEY'; // Ganti dengan Access Key dari Unsplash
+const UNSPLASH_ACCESS_KEY = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
 
 const unsplashAPI = axios.create( {
     baseURL: 'https://api.unsplash.com',
@@ -9,20 +10,22 @@ const unsplashAPI = axios.create( {
     },
 } );
 
-export const fetchRandomImage = async ( query ) =>
+export const fetchWeddingImages = async () =>
 {
     try
     {
-        const response = await unsplashAPI.get( '/photos/random', {
+        const response = await unsplashAPI.get( '/search/photos', {
             params: {
-                query, // Kata kunci untuk gambar (contoh: "wedding", "couple")
-                orientation: 'landscape', // Atur orientasi gambar
+                query: 'wedding',
+                orientation: 'landscape',
+                per_page: 6, // Mengambil 6 gambar bertema wedding
             },
         } );
-        return response.data.urls.regular; // URL gambar
+        // Mengembalikan array URL gambar
+        return response.data.results.map( ( photo ) => photo.urls.regular );
     } catch ( error )
     {
-        console.error( 'Error fetching image from Unsplash:', error );
-        return null; // Jika terjadi error
+        console.error( 'Error fetching wedding images from Unsplash:', error );
+        return [];
     }
 };
