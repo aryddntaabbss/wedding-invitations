@@ -24,11 +24,11 @@ const CountdownSection = () =>
     }, [] );
 
     return (
-        <section className="py-8 bg-white text-center">
-            <h2 className="text-2xl font-bold text-pink-600">We’re Getting Married!</h2>
+        <section className="py-8 px-5 bg-white text-center">
+            <h2 className="text-2xl font-bold">We’re Getting Married!</h2>
             <div className="flex justify-center space-x-4 mt-4">
                 { [ 'days', 'hours', 'minutes', 'seconds' ].map( ( unit, index ) => (
-                    <div key={ index } className="bg-pink-100 p-4 rounded-lg">
+                    <div key={ index } className="shadow-2xl p-4 rounded-lg">
                         <p className="text-2xl font-semibold">{ timeLeft[ unit ] }</p>
                         <p className="text-sm text-gray-600">{ unit }</p>
                     </div>

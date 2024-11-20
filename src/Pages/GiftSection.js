@@ -3,7 +3,7 @@ import React from 'react';
 const GiftSection = () =>
 {
     return (
-        <section className="py-12 bg-white text-center">
+        <section className="py-12 px-5 bg-white text-center">
             <h2 className="text-3xl font-semibold text-pink-600">Give a Gift</h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus est pretium tempus.

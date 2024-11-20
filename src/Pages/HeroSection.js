@@ -27,9 +27,16 @@ const HeroSection = () =>
                 <p className="pt-2 font-ubuntu text-lg text-gray-300 px-2">With Your blessing, you brought us together in a holy marriage bond</p>
                 <h2 className="text-3xl font-ubuntu font-medium py-16">THE WEDDING OF</h2>
                 <div className="text-center text-white relative z-10 flex flex-col justify-center">
-                    <h1 className="text-8xl font-medium font-wedding pr-28 lg:mr-48">Asep</h1>
-                    <h1 className="text-7xl font-medium font-wedding">&</h1>
-                    <h1 className="text-8xl font-medium font-wedding pl-28 lg:ml-48">Putri</h1>
+                    <h1 className="text-8xl font-medium font-wedding pb-5">Asep</h1>
+                    <div className="relative">
+                        <span
+                            className="absolute top-[-20px] left-20 md:left-[630px] text-4xl font-medium font-wedding"
+                        >
+                            &
+                        </span>
+                        <h1 className="text-8xl font-medium font-wedding">Putri</h1>
+                    </div>
+
                 </div>
                 <p className="pt-4 text-lg font-ubuntu">- 02 Februari 2022 -</p>
             </div>

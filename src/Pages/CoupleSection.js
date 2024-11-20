@@ -19,8 +19,8 @@ const CoupleSection = () =>
     }, [] );
 
     return (
-        <section className="text-center py-12 bg-white">
-            <h2 className="text-3xl font-semibold text-pink-600">Meet The Happy Couple</h2>
+        <section className="text-center py-12 px-5 bg-white">
+            <h2 className="text-3xl font-semibold">Meet The Happy Couple</h2>
             <p className="mt-2 text-gray-600">We’re excited to celebrate our special day with you</p>
             <div className="flex justify-center mt-8 space-x-8">
                 <div>

@@ -25,7 +25,7 @@ const MapSection = () =>
                 <div className="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
                     {/* Wedding Ceremony Card */ }
                     <div
-                        className="max-w-sm bg-cover bg-center rounded-lg shadow-lg text-white p-6"
+                        className="max-w-sm bg-cover bg-center rounded-lg shadow-lg text-white"
                         style={ {
                             backgroundImage: `url(${ ceremonyImage })`,
                         } }
@@ -39,7 +39,7 @@ const MapSection = () =>
                                 href="https://www.google.com/maps" // Ganti dengan link Google Maps yang spesifik jika ada
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block mt-4 text-pink-200 bg-white bg-opacity-25 px-4 py-2 rounded-lg hover:bg-opacity-50"
+                                className="block mt-4 bg-white bg-opacity-25 px-4 py-2 rounded-lg hover:bg-opacity-50"
                             >
                                 Open Map
                             </a>
@@ -48,7 +48,7 @@ const MapSection = () =>
 
                     {/* Wedding Party Card */ }
                     <div
-                        className="max-w-sm bg-cover bg-center rounded-lg shadow-lg text-white p-6"
+                        className="max-w-sm bg-cover bg-center rounded-lg shadow-lg text-white"
                         style={ {
                             backgroundImage: `url(${ partyImage })`,
                         } }
@@ -62,7 +62,7 @@ const MapSection = () =>
                                 href="https://www.google.com/maps" // Ganti dengan link Google Maps yang spesifik jika ada
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block mt-4 text-pink-200 bg-white bg-opacity-25 px-4 py-2 rounded-lg hover:bg-opacity-50"
+                                className="block mt-4 bg-white bg-opacity-25 px-4 py-2 rounded-lg hover:bg-opacity-50"
                             >
                                 Open Map
                             </a>
