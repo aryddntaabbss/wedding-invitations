@@ -6,30 +6,39 @@ const CountdownSection = () =>
 
     useEffect( () =>
     {
-        const countdownDate = new Date( '02 Feb 2025 08:30:00' ).getTime();
+        const countdownDate = new Date( '12 Dec 2024 08:30:00' ).getTime();
+
         const interval = setInterval( () =>
         {
             const now = new Date().getTime();
             const distance = countdownDate - now;
 
-            setTimeLeft( {
-                days: Math.floor( distance / ( 1000 * 60 * 60 * 24 ) ),
-                hours: Math.floor( ( distance % ( 1000 * 60 * 60 * 24 ) ) / ( 1000 * 60 * 60 ) ),
-                minutes: Math.floor( ( distance % ( 1000 * 60 * 60 ) ) / ( 1000 * 60 ) ),
-                seconds: Math.floor( ( distance % ( 1000 ) ) / 1000 ),
-            } );
+            // Jika waktu sudah habis, hentikan interval
+            if ( distance < 0 )
+            {
+                clearInterval( interval );
+                setTimeLeft( { days: 0, hours: 0, minutes: 0, seconds: 0 } );
+            } else
+            {
+                setTimeLeft( {
+                    days: Math.floor( distance / ( 1000 * 60 * 60 * 24 ) ),
+                    hours: Math.floor( ( distance % ( 1000 * 60 * 60 * 24 ) ) / ( 1000 * 60 * 60 ) ),
+                    minutes: Math.floor( ( distance % ( 1000 * 60 * 60 ) ) / ( 1000 * 60 ) ),
+                    seconds: Math.floor( ( distance % ( 1000 * 60 ) ) / 1000 ),
+                } );
+            }
         }, 1000 );
 
+        // Bersihkan interval ketika komponen dibersihkan
         return () => clearInterval( interval );
     }, [] );
 
     return (
-        <section className="py-8 px-5 bg-white text-center">
-            <h2 className="text-2xl font-bold">We’re Getting Married!</h2>
-            <div className="flex justify-center space-x-4 mt-4">
+        <section className="py-8 px-5 text-center">
+            <div className="flex justify-center space-x-4">
                 { [ 'days', 'hours', 'minutes', 'seconds' ].map( ( unit, index ) => (
-                    <div key={ index } className="shadow-2xl p-4 rounded-lg">
-                        <p className="text-2xl font-semibold">{ timeLeft[ unit ] }</p>
+                    <div key={ index } className="shadow-2xl h-16 w-16 pt-1 rounded-lg bg-white opacity-60">
+                        <p className="text-2xl text-black font-semibold">{ timeLeft[ unit ] }</p>
                         <p className="text-sm text-gray-600">{ unit }</p>
                     </div>
                 ) ) }

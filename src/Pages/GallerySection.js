@@ -1,34 +1,49 @@
-import React, { useEffect, useState } from 'react';
-import { fetchWeddingImages } from '../unsplashAPI';
+import React from 'react';
+import WeddingImage from '../components/WeddingImage';
 
 const GallerySection = () =>
 {
-    const [ galleryImages, setGalleryImages ] = useState( [] );
-
-    useEffect( () =>
-    {
-        const loadImages = async () =>
-        {
-            const images = await fetchWeddingImages(); // Memanggil gambar bertema wedding
-            setGalleryImages( images );
-        };
-        loadImages();
-    }, [] );
 
     return (
-        <section className="py-12 px-5 bg-pink-50 text-center">
-            <h2 className="text-3xl font-semibold text-pink-600">Gallery</h2>
+        <section className="py-12 px-5 text-center">
+            <img
+                src="/img/ornament/flower2.png"
+                alt="Ornament"
+                className="mx-auto h-28"
+            />
+            <h2 className="text-4xl font-bold font-wedding">Our Gallery</h2>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                { galleryImages.map( ( image, index ) => (
-                    <div key={ index } className="overflow-hidden rounded-lg shadow-lg">
-                        <img
-                            src={ image }
-                            alt={ `Wedding gallery image ${ index + 1 }` }
-                            className="w-full h-48 object-cover transform hover:scale-105 transition duration-300"
-                        />
-                    </div>
-                ) ) }
+                <WeddingImage
+                    imageName="img-(2).jpg"
+                    altText="Couple"
+                    className="w-full h-48 object-cover transform hover:scale-105 transition duration-300"
+                />
+                <WeddingImage
+                    imageName="img-(3).jpg"
+                    altText="Couple"
+                    className="w-full h-48 object-cover transform hover:scale-105 transition duration-300"
+                />
+                <WeddingImage
+                    imageName="img-(4).jpg"
+                    altText="Couple"
+                    className="w-full h-48 object-cover transform hover:scale-105 transition duration-300"
+                />
+                <WeddingImage
+                    imageName="img-(5).jpg"
+                    altText="Couple"
+                    className="w-full h-48 object-cover transform hover:scale-105 transition duration-300"
+                />
+                <WeddingImage
+                    imageName="img-(6).jpg"
+                    altText="Couple"
+                    className="w-full h-48 object-cover transform hover:scale-105 transition duration-300"
+                />
+                <WeddingImage
+                    imageName="img-(7).jpg"
+                    altText="Couple"
+                    className="w-full h-48 object-cover transform hover:scale-105 transition duration-300"
+                />
             </div>
 
             <p className="text-gray-600 mt-8 italic max-w-2xl mx-auto">

@@ -1,21 +1,26 @@
 import React from 'react';
 
 const EventDetails = () => (
-    <section className="py-8 px-5 bg-white text-center">
-        <h2 className="text-2xl md:text-3xl font-bold">Wedding Ceremony & Party</h2>
+    <div className="py-8 px-5 bg-lime-900 text-center text-white">
+        <img
+            src="/img/ornament/flower2.png"
+            alt="Ornament"
+            className="mx-auto h-28"
+        />
+        <h2 className="text-4xl font-bold font-wedding">Wedding Ceremony & Party</h2>
         <div className="mt-6 flex justify-center space-x-8">
             <div>
                 <h3 className="font-bold">Wedding Ceremony</h3>
-                <p className="text-gray-600">Baiturrahman Mosque</p>
-                <p className="text-gray-600">10:00 AM - 12:00 PM</p>
+                <p>Baiturrahman Mosque</p>
+                <p>10:00 AM - 12:00 PM</p>
             </div>
             <div>
                 <h3 className="font-bold">Wedding Party</h3>
-                <p className="text-gray-600">Grand Ballroom Hotel</p>
-                <p className="text-gray-600">6:00 PM - 10:00 PM</p>
+                <p>Grand Ballroom Hotel</p>
+                <p>6:00 PM - 10:00 PM</p>
             </div>
         </div>
-    </section>
+    </div>
 );
 
 export default EventDetails;
